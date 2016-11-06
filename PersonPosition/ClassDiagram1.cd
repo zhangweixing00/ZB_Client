@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="宋体" Size="9" />
+  <Class Name="PersonPosition.View.MainForm" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>View\MainForm.cs</FileName>
+      <HashCode>a85ftp+tEq01tb8r/r2WNnz+qI/+MZNqdD0w7s/aoVc=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

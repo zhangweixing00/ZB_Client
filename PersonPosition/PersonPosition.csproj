@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C317E439-8D14-4FB1-A51E-3DFB8468F45D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PersonPosition</RootNamespace>
+    <AssemblyName>PersonPosition</AssemblyName>
+    <ApplicationIcon>MainICO.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\CrystalDecisions.Windows.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ProjNET, Version=1.0.2794.16965, Culture=neutral, PublicKeyToken=a1f5bdcd9c6f5740, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ExternalDLL\ProjNET.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpMap, Version=0.9.3371.30169, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SharpMap\bin\Debug\SharpMap.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpMap.UI, Version=0.9.3401.31800, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SharpMap.UI\bin\Debug\SharpMap.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AllDelegate.cs" />
+    <Compile Include="Common\Global.cs" />
+    <Compile Include="Model\DataGridViewPrint.cs" />
+    <Compile Include="Model\DataSetReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ReportStatistic_DutyMounth.cs" />
+    <Compile Include="Model\ReportAnalysics_Collect.cs" />
+    <Compile Include="Model\ServerMessage.cs" />
+    <Compile Include="Model\ReportAnalysics_Duty.cs" />
+    <Compile Include="Model\ReportDetail_Duty.cs" />
+    <Compile Include="Model\ReportBasic.cs" />
+    <Compile Include="Model\ReportStatistic_Duty.cs" />
+    <Compile Include="Model\ReportStatistic_Collect.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataSetReport.cs">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Statistic_DutyMounth.cs">
+      <DependentUpon>Statistic_DutyMounth.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\Statistic_Duty.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Statistic_Duty.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Detail_Duty.cs">
+      <DependentUpon>Detail_Duty.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\Analysics_Duty.cs">
+      <DependentUpon>Analysics_Duty.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\Statistic_Collect.cs">
+      <DependentUpon>Statistic_Collect.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\Analysics_Collect.cs">
+      <DependentUpon>Analysics_Collect.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="StaticService\CommonFun.cs" />
+    <Compile Include="StaticService\Resource_Service.cs" />
+    <Compile Include="StaticService\DataTableFactory_Service.cs" />
+    <Compile Include="StaticService\DB_Service.cs" />
+    <Compile Include="StaticService\Socket_Service.cs" />
+    <Compile Include="View\DialogCollectChannel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DialogCollectChannel.Designer.cs">
+      <DependentUpon>DialogCollectChannel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DialogLoginSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DialogLoginSetting.Designer.cs">
+      <DependentUpon>DialogLoginSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DialogSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DialogSearch.Designer.cs">
+      <DependentUpon>DialogSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DialogStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DialogStation.Designer.cs">
+      <DependentUpon>DialogStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DialogUpdateCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DialogUpdateCard.Designer.cs">
+      <DependentUpon>DialogUpdateCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmInMine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmInMine.Designer.cs">
+      <DependentUpon>FrmInMine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmInSomething.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmInSomething.Designer.cs">
+      <DependentUpon>FrmInSomething.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLED.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLED.designer.cs">
+      <DependentUpon>FrmLED.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLED_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLED_Setting.designer.cs">
+      <DependentUpon>FrmLED_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLockScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLockScreen.Designer.cs">
+      <DependentUpon>FrmLockScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmPro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmPro.Designer.cs">
+      <DependentUpon>FrmPro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmAlarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmAlarm.Designer.cs">
+      <DependentUpon>FrmAlarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmDuty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmDuty.Designer.cs">
+      <DependentUpon>FrmDuty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmHistory.Designer.cs">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmCollect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmCollect.Designer.cs">
+      <DependentUpon>FrmCollect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmOther.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmOther.Designer.cs">
+      <DependentUpon>FrmOther.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmPerson.Designer.cs">
+      <DependentUpon>FrmPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMachine.Designer.cs">
+      <DependentUpon>FrmMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmAlarmArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmAlarmArea.Designer.cs">
+      <DependentUpon>FrmAlarmArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmShowInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmShowInfo.Designer.cs">
+      <DependentUpon>FrmShowInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmSystem.Designer.cs">
+      <DependentUpon>FrmSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FrmLogin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Brows.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\MaxView.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Query.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Move.ico" />
+    <EmbeddedResource Include="View\DialogStation.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DialogStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmMachine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmMachine.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Station_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GateWay_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GateWay_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GateWay_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Person_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Person_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Person_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Person_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Person_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Person_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Person_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Person_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Person_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Station_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Station_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Station_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Station_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Station_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Station_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GateWay_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Person_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Rule.png" />
+    <EmbeddedResource Include="View\FrmPerson.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmPerson.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\caption.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\j1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ssjk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\rykq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\TTSS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\rygj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ssbj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\TTSS1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\yhgl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Q.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\rykq2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\StationManger_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\OtherManger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Histroy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Abort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Sure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\jian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Del.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ShowAllStation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ShowAny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\BiaoChi.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Person.png" />
+    <EmbeddedResource Include="View\FrmAlarm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmAlarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmDuty.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmDuty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmHistory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\MiddleForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Middle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\Statistic_DutyMounth.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Statistic_DutyMounth.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Statistic_Duty.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Statistic_Duty.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Detail_Duty.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Detail_Duty.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Analysics_Duty.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Analysics_Duty.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Statistic_Collect.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Statistic_Collect.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Analysics_Collect.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Analysics_Collect.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RePlay.png" />
+    <EmbeddedResource Include="View\DialogCollectChannel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DialogCollectChannel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DialogLoginSetting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DialogLoginSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DialogSearch.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DialogSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DialogUpdateCard.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DialogUpdateCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmInMine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmInMine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmInSomething.resx">
+      <DependentUpon>FrmInSomething.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLED.resx">
+      <DependentUpon>FrmLED.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLED_Setting.resx">
+      <DependentUpon>FrmLED_Setting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLockScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmLockScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmPro.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmPro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmCollect.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmCollect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmOther.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmOther.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmAlarmArea.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmAlarmArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmShowInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmShowInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmSystem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Model\DataSetReport.xsc">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="Model\DataSetReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Model\DataSetReport.xss">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenSmallView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseSmallView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TailAfter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StopTailAfter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm_Yellow_ON.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MainICO.ico" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Resources\ruizhilog.ico" />
+    <None Include="Resources\logo软件副本.ico" />
+    <None Include="Resources\logo软件副本21.jpg" />
+    <None Include="Resources\logo软件副本32.ico" />
+    <Content Include="Resources\ruizhilog.jpg" />
+    <None Include="Resources\ruizhilog961.ico" />
+    <None Include="Resources\ruizhilog96.ico" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Resources\Person_16.png" />
+    <None Include="Resources\Person_15.png" />
+    <None Include="Resources\Person_14.png" />
+    <None Include="Resources\Person_13.png" />
+    <None Include="Resources\Person_17.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\ReLogin.png" />
+    <None Include="Resources\Login.bmp" />
+    <None Include="Resources\Title_Sub.bmp" />
+    <None Include="Resources\Title_Above.bmp" />
+    <None Include="Resources\XSElogo.jpg" />
+    <None Include="Resources\MapNULLIco.png" />
+    <None Include="Resources\Person_12.png" />
+    <None Include="Resources\Person_11.png" />
+    <None Include="Resources\Person_10.png" />
+    <None Include="Resources\金翼logo-Small.jpg" />
+    <None Include="Resources\Alarm_Small.png" />
+    <None Include="Resources\Alarm.png" />
+    <None Include="Resources\NormalSize.png" />
+    <None Include="Resources\MaxSize.png" />
+    <None Include="Resources\MapBackgroundPic_Pic.png" />
+    <None Include="Resources\MapBackgroundPic_GIS.png" />
+    <None Include="Resources\DOWN.png" />
+    <None Include="Resources\UP.png" />
+    <None Include="Resources\TailAfter_Small.png" />
+    <None Include="Resources\StationManger_Small.png" />
+    <None Include="Resources\ssjk_Small.png" />
+    <None Include="Resources\ssbj_Small.png" />
+    <None Include="Resources\rykq_Small.png" />
+    <None Include="Resources\rykq2_Small.png" />
+    <None Include="Resources\rygj_Small.png" />
+    <None Include="Resources\Q_Small.png" />
+    <None Include="Resources\Person_Small.png" />
+    <None Include="Resources\OtherManger_Small.png" />
+    <None Include="Resources\Help_Small.png" />
+    <None Include="Resources\TTSS_Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PublicState\PublicState.csproj">
+      <Project>{4B876478-5CDC-477A-AD23-F692DE00F555}</Project>
+      <Name>PublicState</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
